@@ -68,6 +68,7 @@ public class Main {
     }
 
     public static boolean estaOcupada(JSONObject habitacion){
+
         if(habitacion.get("estado").equals("OA") || habitacion.get("estado").equals("OS")) {
             return true;
         }else {
