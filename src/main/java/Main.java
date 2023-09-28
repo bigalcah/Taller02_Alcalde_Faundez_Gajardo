@@ -16,6 +16,12 @@ public class Main {
 
     public static void main(String[] args) {
 
+        JSONObject habitacion = new JSONObject();
+        habitacion.put("precio", 1000);
+        habitacion.put("estado", "OS");
+        actualizarPrecio(habitacion);
+        System.out.println("Precio: " + habitacion.get("precio"));
+
     }
 
     public static String lectura(){
@@ -42,7 +48,16 @@ public class Main {
 
     public static int resetAll(ArrayList<JSONObject> listaHabitaciones) {
         listaHabitaciones.clear();
+        //crearHabitaciones();
         return listaHabitaciones.size();
+    }
+
+    public static void actualizarPrecio (JSONObject habitacion) {
+        if( habitacion.get("estado").equals("OA") ) {
+            habitacion.put("precio", 30000);
+        } else if (habitacion.get("estado").equals("OS")) {
+            habitacion.put("precio", 45000);
+        }
     }
 
 
