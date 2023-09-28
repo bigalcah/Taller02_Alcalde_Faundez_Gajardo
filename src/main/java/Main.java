@@ -62,6 +62,15 @@ public class Main {
 
     }
 
+    public static void actualizarOcupada(JSONObject habitacion){
+        if(estaOcupada(habitacion)){
+            System.out.println("La cabaña ya está ocupada");
+        }else{
+            habitacion.put("estado",ocuparHab());
+            actualizarPrecio(habitacion);
+        }
+    }
+
     public static boolean estaOcupada(JSONObject habitacion){
         if(habitacion.get("estado").equals("OA") || habitacion.get("estado").equals("OS")) {
             return true;
@@ -69,19 +78,27 @@ public class Main {
             return false;
         }
     }
-    public static String actualizarOcupada(){
+
+    public static String ocuparHab(){
+
         String estado = "";
         Scanner scanner = new Scanner(System.in);
+
         System.out.println("[1] Ocupar con comida");
         System.out.println("[2] Ocupar sin comida");
+
         String respuesta = scanner.next();
+
         if(respuesta.equals("1")){
             estado = "OA";
         } else if (respuesta.equals("2")) {
             estado = "OS";
         }
+
         return estado;
     }
+
+
 
 
 
