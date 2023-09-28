@@ -9,4 +9,9 @@ Javier Alcalde: Mostrar habitaciones, reservar/ocupar habitaciones. *
 Christian Gajardo: Crear habitaciones, imprimir boleta, actualizar. *
 Joaquin Faundez: resetear hab, actualizar precio. *
 
-* con todos los metodos de validaciones necesarios.
+Formato de almacenamiento de las cabañas:   
+* Id
+* Estado
+* Cantidad de noches
+* Precios
+
