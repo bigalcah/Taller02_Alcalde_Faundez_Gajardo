@@ -1,30 +1,24 @@
-import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
-    ArrayList<JSONArray> listaHabitaciones = new ArrayList<JSONArray>();
+    ArrayList<JSONObject> listaHabitaciones;
+    ArrayList<JSONObject> listaHabitaciones2;
+    JSONObject Hab;
 
     @BeforeEach
     void setUp() {
-        JSONObject habitacion1 = new JSONObject();
-        habitacion1.put("id","1");
-        habitacion1.put("estado",0);
-        habitacion1.put("noches",0);
-        habitacion1.put("precio",0);
-
-        JSONObject habitacionOcupada = new JSONObject();
-        habitacion1.put("id","1");
-        habitacion1.put("estado","OC");
-        habitacion1.put("noches",0);
-        habitacion1.put("precio",0);
+        Hab = new JSONObject();
+        Hab.put("id", 0);
+        Hab.put("estado", "D");
+        Hab.put("noches", 0);
+        Hab.put("precio", 0);
 
     }
 
@@ -33,23 +27,18 @@ class MainTest {
     }
 
     @Test
-    void mostrarHabitacionesTest() {
+    void crearHabitaciones() {
+        listaHabitaciones = new ArrayList<JSONObject>();
+        Main.crearHabitaciones(listaHabitaciones);
+        assertEquals(10, listaHabitaciones.size());
     }
 
     @Test
-    void mostrarCabañaTest() {
+    void agregarHabitacion() {
+        listaHabitaciones2 = new ArrayList<JSONObject>();
+        Main.agregarHabitacion(listaHabitaciones2, Hab);
+        assertEquals(1, listaHabitaciones2.size());
     }
 
-    @Test
-    void hacerReservaTest() {
-    }
-    @Test
-    void reservarHabTest(){
 
-    }
-
-    @Test
-    void estaOcupadaTest() {
-
-    }
 }
