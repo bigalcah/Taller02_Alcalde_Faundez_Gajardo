@@ -43,8 +43,8 @@ public class Main {
 
     public static String ocuparHab(){
         String estado = "";
-        System.out.println("[1] Ocupar con comida");
-        System.out.println("[2] Ocupar sin comida");
+        System.out.println("[1] Ocupar con comida $45.000 CLP");
+        System.out.println("[2] Ocupar sin comida $30.000 CLP");
         String respuesta = lecturaString();
         if(respuesta.equals("1")){
             estado = "OA";
@@ -73,8 +73,15 @@ public class Main {
         habitacion.put("noches", noches);
     }
 
-    public static void menuPrincipal(){
+    /*public static void menuPrincipal(){
         //inicializar metodo crear lista de hab.
-        System.out.println("[1] Mostrar");
-    }
+        System.out.println("[1] Mostrar Habitaciones");
+        System.out.println("[2] Resetear Habitaciones");
+        System.out.println("[3] Imprimir Boleta");
+        System.out.println("Ingrese una opcion");
+        int resultado = lecturaInt();
+
+
+
+    }*/
 }

@@ -48,4 +48,8 @@ class MainTest {
 
     }
 
+    @Test
+    void estaOcupadaTest() {
+
+    }
 }
