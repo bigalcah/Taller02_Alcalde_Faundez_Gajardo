@@ -2,25 +2,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/*
-
-{
-"id" = 0,
-"estado" = (D,R,OA,OS) ,
-"noches" = 0,
-"precio" = 0
-}
-
-*/
 public class Main {
 
     public static void main(String[] args) {
-
-        JSONObject habitacion = new JSONObject();
-        habitacion.put("precio", 1000);
-        habitacion.put("estado", "OS");
-        actualizarPrecio(habitacion);
-        System.out.println("Precio: " + habitacion.get("precio"));
 
     }
 
@@ -79,6 +63,7 @@ public class Main {
         }else{
             habitacion.put("estado",ocuparHab());
             actualizarPrecio(habitacion);
+            actualizarNoches(habitacion);
         }
     }
 
