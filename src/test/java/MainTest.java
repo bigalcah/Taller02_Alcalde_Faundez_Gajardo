@@ -17,6 +17,8 @@ class MainTest {
 
         habitacion1.put("id",0);
         habitacion2.put("id",1);
+        listaHabitaciones.add(habitacion1);
+        listaHabitaciones.add(habitacion2);
 
     }
 

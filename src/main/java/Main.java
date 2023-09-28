@@ -29,7 +29,7 @@ public class Main {
         return leer.next();
     }
 
-    public static void B_resetAll(ArrayList<JSONObject> listaHabitaciones) {
+    public static void hacerResetAll(ArrayList<JSONObject> listaHabitaciones) {
 
         System.out.println("Esta seguro que desea resetear todas las habiaciones?" +
                 "Esto eliminara todas las reservas y/o cabañas ocupadas.");
@@ -53,11 +53,13 @@ public class Main {
     }
 
     public static void actualizarPrecio (JSONObject habitacion) {
+
         if( habitacion.get("estado").equals("OA") ) {
             habitacion.put("precio", 30000);
         } else if (habitacion.get("estado").equals("OS")) {
             habitacion.put("precio", 45000);
         }
+
     }
 
 
