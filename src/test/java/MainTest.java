@@ -4,6 +4,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -25,8 +26,6 @@ class MainTest {
         habitacion1.put("noches",0);
         habitacion1.put("precio",0);
 
-
-
     }
 
     @AfterEach
@@ -34,19 +33,19 @@ class MainTest {
     }
 
     @Test
-    void mostrarHabitaciones() {
+    void mostrarHabitacionesTest() {
     }
 
     @Test
-    void mostrarCabaña() {
+    void mostrarCabañaTest() {
     }
 
     @Test
-    void hacerReserva() {
+    void hacerReservaTest() {
     }
-
     @Test
-    void reservarHab() {}{
+    void reservarHabTest(){
 
     }
+
 }
