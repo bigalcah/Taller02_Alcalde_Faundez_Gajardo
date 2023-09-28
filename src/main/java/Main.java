@@ -31,12 +31,21 @@ public class Main {
             return false;
         }
     }
-    public static String actualizarOcupada(){
+    public static String lecturaString(){
+        Scanner leer = new Scanner(System.in);
+        return leer.next();
+    }
+
+    public static int lecturaInt(){
+        Scanner leer = new Scanner(System.in);
+        return leer.nextInt();
+    }
+
+    public static String ocuparHab(){
         String estado = "";
-        Scanner scanner = new Scanner(System.in);
         System.out.println("[1] Ocupar con comida");
         System.out.println("[2] Ocupar sin comida");
-        String respuesta = scanner.next();
+        String respuesta = lecturaString();
         if(respuesta.equals("1")){
             estado = "OA";
         } else if (respuesta.equals("2")) {
@@ -44,7 +53,6 @@ public class Main {
         }
         return estado;
     }
-
     public static void reservarHab(JSONObject habitacion){
         if(estaOcupada(habitacion)){
             System.out.println("La cabaña ya está ocupada");
@@ -52,11 +60,21 @@ public class Main {
             habitacion.put("estado", "R");
         }
     }
-    public static void ocuparHab(JSONObject habitacion){
+    public static void actualizarOcupada(JSONObject habitacion){
         if(estaOcupada(habitacion)){
             System.out.println("La cabaña ya está ocupada");
         }else{
-            habitacion.put("estado",actualizarOcupada());
+            habitacion.put("estado",ocuparHab());
         }
+    }
+    public static void actualizarNoches(JSONObject habitacion){
+        System.out.println("Ingrese la cantidad de noches que va a ocupar");
+        int noches = lecturaInt();
+        habitacion.put("noches", noches);
+    }
+
+    public static void menuPrincipal(){
+        //inicializar metodo crear lista de hab.
+        System.out.println("[1] Mostrar");
     }
 }
