@@ -9,38 +9,42 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
     ArrayList<JSONObject> listaHabitaciones = new ArrayList<>();
+    ArrayList<JSONObject> listaHabitaciones2 = new ArrayList<>();
     JSONObject habitacion1 = new JSONObject();
     JSONObject habitacion2 = new JSONObject();
 
-    @BeforeEach
-    void setUp() {
-
-        habitacion1.put("id",0);
-        habitacion2.put("id",1);
-        listaHabitaciones.add(habitacion1);
-        listaHabitaciones.add(habitacion2);
-    ArrayList<JSONObject> listaHabitaciones;
-    ArrayList<JSONObject> listaHabitaciones2;
     JSONObject Hab;
 
     @BeforeEach
     void setUp() {
+
+        habitacion1.put("id", 0);
+        habitacion2.put("id", 1);
+        listaHabitaciones.add(habitacion1);
+        listaHabitaciones.add(habitacion2);
+        ArrayList<JSONObject> listaHabitaciones;
+        ArrayList<JSONObject> listaHabitaciones2;
+        JSONObject Hab;
+
         Hab = new JSONObject();
         Hab.put("id", 0);
         Hab.put("estado", "D");
         Hab.put("noches", 0);
         Hab.put("precio", 0);
-
     }
 
     @AfterEach
-    void tearDown() {
+    void tearDown(){
+
     }
+
 
     @Test
     void resetAll() {
         assertEquals(0, Main.resetAll(listaHabitaciones)) ;
     }
+
+    @Test
     void crearHabitaciones() {
         listaHabitaciones = new ArrayList<JSONObject>();
         Main.crearHabitaciones(listaHabitaciones);
@@ -53,6 +57,4 @@ class MainTest {
         Main.agregarHabitacion(listaHabitaciones2, Hab);
         assertEquals(1, listaHabitaciones2.size());
     }
-
-
 }
