@@ -62,6 +62,27 @@ public class Main {
 
     }
 
+    public static boolean estaOcupada(JSONObject habitacion){
+        if(habitacion.get("estado").equals("OA") || habitacion.get("estado").equals("OS")) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+    public static String actualizarOcupada(){
+        String estado = "";
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("[1] Ocupar con comida");
+        System.out.println("[2] Ocupar sin comida");
+        String respuesta = scanner.next();
+        if(respuesta.equals("1")){
+            estado = "OA";
+        } else if (respuesta.equals("2")) {
+            estado = "OS";
+        }
+        return estado;
+    }
+
 
 
 }
