@@ -62,6 +62,12 @@ public class Main {
 
     }
 
+    public static void actualizarNoches(JSONObject habitacion){
+        System.out.println("Ingrese la cantidad de noches que va a ocupar");
+        int noches = lecturaInt();
+        habitacion.put("noches", noches);
+    }
+
     public static void actualizarOcupada(JSONObject habitacion){
         if(estaOcupada(habitacion)){
             System.out.println("La cabaña ya está ocupada");
@@ -97,6 +103,8 @@ public class Main {
 
         return estado;
     }
+
+
 
 
 
