@@ -8,6 +8,17 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
+    ArrayList<JSONObject> listaHabitaciones = new ArrayList<>();
+    JSONObject habitacion1 = new JSONObject();
+    JSONObject habitacion2 = new JSONObject();
+
+    @BeforeEach
+    void setUp() {
+
+        habitacion1.put("id",0);
+        habitacion2.put("id",1);
+        listaHabitaciones.add(habitacion1);
+        listaHabitaciones.add(habitacion2);
     ArrayList<JSONObject> listaHabitaciones;
     ArrayList<JSONObject> listaHabitaciones2;
     JSONObject Hab;
@@ -27,6 +38,9 @@ class MainTest {
     }
 
     @Test
+    void resetAll() {
+        assertEquals(0, Main.resetAll(listaHabitaciones)) ;
+    }
     void crearHabitaciones() {
         listaHabitaciones = new ArrayList<JSONObject>();
         Main.crearHabitaciones(listaHabitaciones);
