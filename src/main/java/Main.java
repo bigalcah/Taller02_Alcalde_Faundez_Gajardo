@@ -24,9 +24,14 @@ public class Main {
 
     }
 
-    public static String lectura(){
+    public static String lecturaString(){
         Scanner leer = new Scanner(System.in);
         return leer.next();
+    }
+
+    public static int lecturaInt(){
+        Scanner leer = new Scanner(System.in);
+        return leer.nextInt();
     }
 
     public static void hacerResetAll(ArrayList<JSONObject> listaHabitaciones) {
@@ -34,7 +39,7 @@ public class Main {
         System.out.println("Esta seguro que desea resetear todas las habiaciones?" +
                 "Esto eliminara todas las reservas y/o cabañas ocupadas.");
 
-        String seleccion = lectura();
+        String seleccion = lecturaString();
 
         if (seleccion.equals("0")) {
 
