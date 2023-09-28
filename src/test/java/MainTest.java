@@ -39,4 +39,6 @@ class MainTest {
         Main.agregarHabitacion(listaHabitaciones2, Hab);
         assertEquals(1, listaHabitaciones2.size());
     }
+
+
 }

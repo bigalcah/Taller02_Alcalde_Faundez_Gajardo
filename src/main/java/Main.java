@@ -1,3 +1,4 @@
+import jdk.internal.access.JavaIOFileDescriptorAccess;
 import org.json.JSONObject;
 import java.util.ArrayList;
 
@@ -32,13 +33,24 @@ public class Main {
         return index;
     }
     public static void checkout(JSONObject Habitacion){
+        imprimirBoleta(Habitacion);
         Habitacion.put("estado", "D");
         Habitacion.put("noches", 0);
         Habitacion.put("precio", 0);
     }
 
-    public static  void imprimirCCheckout(JSONObject Habitacion){
+    public static  void imprimirBoleta(JSONObject Habitacion){
+        int OA = 30000;
+        int OS = 45000;
 
+        int noches = Integer.parseInt(Habitacion.get("noches").toString());
+        System.out.println("Estado: " +Habitacion.get("estado"));
+        System.out.println("Noches: " +Habitacion.get("noches"));
+        if (Habitacion.get("estado") == "OA")
+        System.out.println("Precio: " + (noches * OA));
+        else {
+            System.out.println("Precio: " + (noches * OS));
+        }
     }
 
 
